@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<!--
+    Reflex by Pixelarity
+    pixelarity.com | hello@pixelarity.com
+    License: pixelarity.com/license
+-->
+<html>
+    <head>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}" />
+        <link rel="stylesheet" href="{{ 'assets/css/markdown-images.css' | relative_url }}" />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    </head>
+    <body >
+        {{ content }}
+        <!-- Scripts -->
+        <script src="{{ 'assets/js/jquery.min.js' | relative_url }}"></script>
+        <script src="{{ 'assets/js/browser.min.js' | relative_url }}"></script>
+        <script src="{{ 'assets/js/breakpoints.min.js' | relative_url }}"></script>
+        <script src="{{ 'assets/js/util.js' | relative_url }}"></script>
+        <script src="{{ 'assets/js/main.js' | relative_url }}"></script>
+        <script>
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", function(user) {
+              if (!user) {
+                window.netlifyIdentity.on("login", function() {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+          }
+        </script>
+    </body>
+</html>

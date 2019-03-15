@@ -1,0 +1,37 @@
+<!-- Two -->
+<section class="wrapper style1 special">
+    <div class="inner">
+        <header>
+            <h2>{{ include.section.title }}</h2>
+            {{ include.section.subtitle | markdownify }}
+        </header>
+        {% assign arr = include.site.posts | sort: 'date' | reverse %}
+        {% for post in arr %}
+            <section class="spotlight">
+                <span class="image"><img src="{{ post.img_path | relative_url }}" alt="" /></span>
+                <div class="content">
+                    <header>
+                        <h3>{{ post.title }}</h3>
+                    </header>
+                    {{ post.excerpt | markdownify }}
+                    <footer>
+                        <ul class="actions">
+                            <li><a href="{{ post.url | relative_url }}" class="button">{{ post.post_button_label }}</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </section>
+        {% endfor %}
+            
+        {{ include.section.content | markdownify }}
+        {% if include.section.actions %}
+            <footer>
+                <ul class="actions special">
+                    {% for action in include.section.actions %}
+                        <li><a href="{% assign expr_1 = action.url | starts_with: '#' %}{% if expr_1 %}{{ action.url }}{% else %}{{ action.url | link | relative_url }}{% endif %}" class="button{% if action.is_primary %} primary{% endif %}{% if action.is_scrolly %} scrolly{% endif %}">{{ action.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </footer>
+        {% endif %}
+    </div>
+</section>

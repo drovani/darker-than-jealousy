@@ -1,0 +1,23 @@
+<!-- One -->
+<section class="wrapper style2 special">
+    <div class="inner">
+        <header>
+            <h2>{{ include.section.title }}</h2>
+            {{ include.section.subtitle | markdownify }}
+        </header>
+        <ul class="icons major style2">
+            {% for symbol in include.section.symbol_display %}
+            <li><span class="icon {{ symbol.icon }}"><span class="label">{{ symbol.title }}</span></span></li>{% endfor %}
+        </ul>
+        {{ include.section.content | markdownify }}
+        {% if include.section.actions %}
+            <footer>
+                <ul class="actions special">
+                    {% for action in include.section.actions %}
+                        <li><a href="{% assign expr_1 = action.url | starts_with: '#' %}{% if expr_1 %}{{ action.url }}{% else %}{{ action.url | link | relative_url }}{% endif %}" class="button{% if action.is_primary %} primary{% endif %}{% if action.is_scrolly %} scrolly{% endif %}">{{ action.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </footer>
+        {% endif %}
+    </div>
+</section>

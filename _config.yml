@@ -1,0 +1,51 @@
+title: Reflex
+baseurl: /
+permalink: '/posts/:slug:output_ext'
+menu:
+  actions:
+    - label: Get Started
+      url: generic.md
+      is_scrolly: false
+      is_primary: true
+    - label: Log In
+      url: generic.md
+      is_scrolly: false
+      is_primary: false
+social:
+  enabled: true
+  title: Magna lorem ipsum
+  social_content: >-
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum
+    facilisis. Class aptent taciti sociosqu ad litora torquent per conubia
+    nostra, per inceptos himenaeos magna fames ac turpis egestas amet non lorem
+    amet.
+  social_links:
+    - title: Twitter
+      icon: fa-twitter
+      link_url: '#'
+    - title: Instagram
+      icon: fa-instagram
+      link_url: '#'
+    - title: Snapchat
+      icon: fa-snapchat-ghost
+      link_url: '#'
+    - title: GitHub
+      icon: fa-github
+      link_url: '#'
+footer:
+  enable_contact_section: true
+  line_phrase: Lorem ipsum dolor sit amet nullam.
+plugins:
+  - jekyll-menus
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - build.sh
+  - LICENSE.md
+  - README.md
+  - netlify.toml

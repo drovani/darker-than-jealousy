@@ -1,0 +1,14 @@
+<!-- Footer -->
+<section id="footer" class="wrapper split style2">
+    <div class="inner">
+        {% if site.social.enabled %}
+            {% include social.html %}
+        {% endif %}
+        {% if site.footer.enable_contact_section %}
+            {% include contact.html %}
+        {% endif %}
+    </div>
+    <div class="copyright">
+        <p>&copy; {{ site.title }}. All rights reserved. {{ site.footer.line_phrase }}</p>
+    </div>
+</section>
